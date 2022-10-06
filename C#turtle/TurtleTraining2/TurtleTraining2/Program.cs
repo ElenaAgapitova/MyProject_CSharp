@@ -9,15 +9,15 @@ namespace TurtleTraining2
 {
     internal class Program
     {
-        static void WriteT(int size1, int size2)
+        static void WriteT(int size)
         {
             // Буква "Т" начало
             Turtle.Angle = 0; // направление наверх = 0
-            Turtle.Move(size1);
+            Turtle.Move(size);
             Turtle.Angle = 270; //поворот налево, можно Turtle.TurnLeft();
-            Turtle.Move(size2);
+            Turtle.Move(size/3);
             Turtle.Angle = 90;
-            Turtle.Move(size2*2);
+            Turtle.Move(size*2/3);
             // Буква Т конец
         }
         static void WriteO(int size)
@@ -32,18 +32,11 @@ namespace TurtleTraining2
             // Буква О конец
         }
 
-        static void WriteP(int size1, int size2)
+        static void WriteR(int size)
         {
             Turtle.Angle = 0;
-            Turtle.Move(size1);
-            Turtle.TurnRight();
-            Turtle.Move(size2);
-            Turtle.TurnRight();
-            Turtle.Move(size2);
-            Turtle.TurnRight();
-            Turtle.Move(size2);
-            Turtle.TurnLeft();
-            Turtle.Move(size2);
+            Turtle.Move(size/2);
+            WriteO(size / 2);
         }
 
         static void Main(string[] args)
@@ -89,27 +82,23 @@ namespace TurtleTraining2
 
             // Пишем слово торт
 
-            Turtle.Speed = 9;
+            Turtle.Speed = 5;
+
             Turtle.X = 200;
             Turtle.Y = 200;
+            WriteT(60);
 
-            WriteT(60,20);
-
-            Turtle.X = 260;
+            Turtle.X = 240;
             Turtle.Y = 200;
+            WriteO(30);
 
-            WriteO(40);
+            Turtle.X = 300;
+            Turtle.Y = 200;
+            WriteR(30);
 
             Turtle.X = 340;
             Turtle.Y = 200;
-
-            WriteP(40, 20);
-           
-         
-            Turtle.X = 400;
-            Turtle.Y = 200;
-
-            WriteT(40,15);
+            WriteT(30);
 
 
 
