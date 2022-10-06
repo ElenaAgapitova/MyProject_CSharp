@@ -11,24 +11,22 @@ namespace TurtleGame
     {
         static void Main(string[] args)
         {
-            GraphicsWindow.KeyDown += GraphicsWindow_KeyDown; // Вызов функции, при нажатии клавиши черепашка будет менять направление движения;
+            GraphicsWindow.KeyDown += GraphicsWindow_KeyDown; 
+            Turtle.PenUp(); 
+            
 
-            Turtle.PenUp(); // Команда, которая убирает шлейф (рисунок линии) за черепашкой; Turtle.PenDown(); - будет оставлять след;
+            GraphicsWindow.BrushColor = "Yellow";
+            var eat = Shapes.AddRectangle(10, 10); 
+            Shapes.Move(eat, 200, 200); 
 
-            // var x = 0; -> var - используется, если не хотим указывать тип данных, int x = 0; (int - целое число), программа понимает, какая переменная по значению справа.
-
-            GraphicsWindow.BrushColor = "Yellow"; // Добавили цвет, кисть которой рисуем имеет цвет желтый;
-            var eat = Shapes.AddRectangle(10, 10); // Shapes.AddRectangle - вызов квадрата со сторонами 10 на 10;
-            Shapes.Move(eat, 200, 200); // Будем двигать еду в координатах 200 - 200;
-
-            while (true)  // Черепашка будет двигаться всегда, без остановок;
+            while (true)  
             {
                 Turtle.Move(10);
             }
 
         }
 
-        private static void GraphicsWindow_KeyDown() // Описание функции нажатии клавиш, будет меняться направление движения только, если нажимаем стрелочки вверх/вниз/направо/налево
+        private static void GraphicsWindow_KeyDown() 
         {
             if(GraphicsWindow.LastKey == "Up")
             {
@@ -45,7 +43,7 @@ namespace TurtleGame
             else if(GraphicsWindow.LastKey == "Down")
             {
                 Turtle.Angle = 180;
-            } // при нажатии других клавиш черепашка не будет менять направления движений
+            }
         }
-    }
+    }   
 }
