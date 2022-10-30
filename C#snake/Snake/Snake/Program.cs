@@ -4,12 +4,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        /* Point p1 = new Point(1,3,'*');
-         p1.Draw();
-
-         Point p2 = new Point(4,5,'#');
-         p2.Draw();*/
-
         Console.SetWindowSize(80, 25); // задали размер окна
         Console.SetBufferSize(80, 25); // размер рамки
 
@@ -23,9 +17,11 @@ internal class Program
         VerticalLine lineRight = new VerticalLine(0, 24, 78, '+');
         lineRight.Print();
 
-        // Отрисовка точек:
+        // Змейка:
+
         Point p = new Point(4, 5, '*');
-        p.Draw();
+        CreateSnake snake = new CreateSnake(p, 4, Direction.RIGHT);
+        snake.Print();
 
         Console.ReadLine();
     }
