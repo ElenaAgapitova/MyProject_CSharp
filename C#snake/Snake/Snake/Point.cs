@@ -63,6 +63,7 @@ namespace Snake
         {
             sym = ' ';
             Draw();
+           
         }
 
          public void Draw()
@@ -70,6 +71,7 @@ namespace Snake
             Console.ForegroundColor = color;
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+            Console.ResetColor();
         }
 
         public override string ToString()

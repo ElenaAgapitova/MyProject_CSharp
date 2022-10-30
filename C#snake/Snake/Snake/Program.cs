@@ -22,7 +22,7 @@ internal class Program
 
         // Змейка:
 
-        Point p = new Point(4, 5, '█', ConsoleColor.Magenta);
+        Point p = new Point(4, 5, '█', ConsoleColor.DarkMagenta);
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
         snake.Print();
 
