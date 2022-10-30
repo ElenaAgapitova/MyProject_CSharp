@@ -11,34 +11,38 @@ namespace Snake
         public int x;
         public int y;
         public char sym;
+        public ConsoleColor color;
 
         public Point()
         {
         }
 
-        public Point(int x, int y, char sym)
+        public Point(int x, int y, char sym, ConsoleColor color)
         {
             this.x = x;
             this.y = y;
             this.sym = sym;
+            this.color = color;
         }
+            
 
         public Point(Point p)
         {
             x = p.x;
             y = p.y;
             sym = p.sym;
+            color = p.color;
         }
 
         public void Move(int offset, Direction direction) // растояние offset направление Direction
         {
             if(direction == Direction.RIGHT)
             {
-                x = x - offset;
+                x = x + offset;
             }
             else if(direction == Direction.LEFT)
             {
-                x = x + offset;
+                x = x - offset;
             }
             if(direction == Direction.UP)
             {
@@ -50,6 +54,11 @@ namespace Snake
             }
         }
 
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         public void Clear()
         {
             sym = ' ';
@@ -58,6 +67,7 @@ namespace Snake
 
          public void Draw()
         {
+            Console.ForegroundColor = color;
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }

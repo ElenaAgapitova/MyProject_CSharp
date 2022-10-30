@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Snake
         protected List<Point> pList; // пишем protected
         public void Print()
         {
+           
             foreach (Point p in pList)
             {
                 p.Draw();
