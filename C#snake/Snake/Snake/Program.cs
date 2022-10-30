@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.SetWindowSize(80, 25); // задали размер окна
+        /*Console.SetWindowSize(80, 25); // задали размер окна
         Console.SetBufferSize(80, 25); // размер рамки
 
         // Описание рамки:
@@ -15,13 +15,33 @@ internal class Program
         HorizontalLine lineDown = new HorizontalLine(0, 78, 24, '+');
         lineDown.Print();
         VerticalLine lineRight = new VerticalLine(0, 24, 78, '+');
-        lineRight.Print();
+        lineRight.Print();*/
 
         // Змейка:
 
         Point p = new Point(4, 5, '*');
         CreateSnake snake = new CreateSnake(p, 4, Direction.RIGHT);
         snake.Print();
+
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+        snake.Move();
+        Thread.Sleep(100);
+
 
         Console.ReadLine();
     }

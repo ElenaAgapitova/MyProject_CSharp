@@ -34,11 +34,11 @@ namespace Snake
         {
             if(direction == Direction.RIGHT)
             {
-                x = x + offset;
+                x = x - offset;
             }
             else if(direction == Direction.LEFT)
             {
-                x = x - offset;
+                x = x + offset;
             }
             if(direction == Direction.UP)
             {
@@ -48,6 +48,12 @@ namespace Snake
             {
                 y = y + offset;
             }
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
 
          public void Draw()
