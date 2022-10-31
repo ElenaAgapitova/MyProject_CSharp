@@ -9,21 +9,11 @@ internal class Program
         Console.SetBufferSize(100, 30); // размер рамки
         Console.CursorVisible = false;
 
-
-        // Описание рамки:
-        HorizontalLine lineUp = new HorizontalLine(0,99,0, '█');
-        lineUp.Print();      
-        VerticalLine lineLeft = new VerticalLine(0,29,0, '█');
-        lineLeft.Print();
-        HorizontalLine lineDown = new HorizontalLine(0, 99, 29, '█');
-        lineDown.Print();
-        VerticalLine lineRight = new VerticalLine(0, 29, 99, '█');
-        lineRight.Print();
-
-        // Змейка:
+        Water water = new Water(100, 30);
+        water.Draw();
 
         Point p = new Point(4, 5, '█', ConsoleColor.DarkMagenta);
-        CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
+        CreateSnake snake = new CreateSnake(p, 4, Direction.RIGHT);
         snake.Print();
 
         FoodCreator foodCreator = new FoodCreator(80, 25, '█');
@@ -33,6 +23,17 @@ internal class Program
                         
         while(true)
         {
+            if(water.isHit(snake) || snake.IsHitTail())
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition(40, 13);
+                Console.WriteLine("==================");
+                Console.SetCursorPosition(40, 15);
+                Console.WriteLine("G A M E   O V E R");
+                Console.SetCursorPosition(40, 17);
+                Console.WriteLine("==================");
+                break;
+            }
             if(snake.Eat(food))
             {
                 food = foodCreator.CreateFood();
@@ -42,21 +43,18 @@ internal class Program
             {
                 snake.Move();
             }
-            Thread.Sleep(200);
+            Thread.Sleep(150);
 
             if(Console.KeyAvailable)
             {
                 ConsoleKeyInfo key = Console.ReadKey();
                 snake.HandleKey(key.Key);
             }
-            Thread.Sleep(200);
-            snake.Move();
-        }
-       
+        }  
         
+        
+        Console.ReadLine(); 
 
-
-        Console.ReadLine();
-    }
-
+     }
 }
+

@@ -12,20 +12,13 @@ namespace Snake
         public int y;
         public char sym;
         public ConsoleColor color;
-
-        public Point()
-        {
-        }
-
         public Point(int x, int y, char sym, ConsoleColor color)
         {
             this.x = x;
             this.y = y;
             this.sym = sym;
             this.color = color;
-        }
-            
-
+        }   
         public Point(Point p)
         {
             x = p.x;
@@ -33,7 +26,6 @@ namespace Snake
             sym = p.sym;
             color = p.color;
         }
-
         public void Move(int offset, Direction direction) // растояние offset направление Direction
         {
             if(direction == Direction.RIGHT)
@@ -53,27 +45,22 @@ namespace Snake
                 y = y + offset;
             }
         }
-
         public bool IsHit(Point p)
         {
             return p.x == this.x && p.y == this.y;
         }
-
         public void Clear()
         {
             sym = ' ';
             Draw();
            
         }
-
          public void Draw()
         {
             Console.ForegroundColor = color;
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
-            Console.ResetColor();
         }
-
         public override string ToString()
         {
             return x + "," + y + "," + sym;

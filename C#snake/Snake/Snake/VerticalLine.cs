@@ -15,7 +15,7 @@ namespace Snake
 
             for(int y = yUp; y <= yDown; y++)
             {
-                Point p = new Point(x,y,sym, ConsoleColor.DarkGray);
+                Point p = new Point(x,y,sym, ConsoleColor.DarkCyan);
                 pList.Add(p);
             }
 

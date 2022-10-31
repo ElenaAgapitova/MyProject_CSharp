@@ -51,12 +51,23 @@ namespace Snake
             if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
         }
+        public bool IsHitTail()
+        { 
+            var head = pList.Last ();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
 
         internal bool Eat(Point food)
         {
             Point head = GetNextPoint();
             if(head.IsHit(food))
             {
+                food.color = ConsoleColor.DarkMagenta;
                 food.sym = head.sym;
                 pList.Add(food);
                 return true;
@@ -64,6 +75,8 @@ namespace Snake
             else
                 return false;
         }
+
+
 
 
     }
