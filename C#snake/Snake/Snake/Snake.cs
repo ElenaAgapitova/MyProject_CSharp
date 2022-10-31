@@ -10,6 +10,7 @@ namespace Snake
     internal class CreateSnake : Figure
     {
         Direction direction;
+        
         public CreateSnake(Point tail, int length, Direction direction1)
         {
             direction = direction1;
@@ -21,6 +22,7 @@ namespace Snake
                 pList.Add(p);
             }
         }
+
         internal void Move()
         {
             Point tail = pList.First();
@@ -65,7 +67,7 @@ namespace Snake
         internal bool Eat(Point food)
         {
             Point head = GetNextPoint();
-            if(head.IsHit(food))
+            if (head.IsHit(food))
             {
                 food.color = ConsoleColor.DarkMagenta;
                 food.sym = head.sym;

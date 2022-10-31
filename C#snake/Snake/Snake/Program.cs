@@ -16,6 +16,8 @@ internal class Program
         CreateSnake snake = new CreateSnake(p, 4, Direction.RIGHT);
         snake.Print();
 
+        int snakeSpeed = 150;
+
         FoodCreator foodCreator = new FoodCreator(80, 25, '█');
         Point food = foodCreator.CreateFood();
         food.Draw();
@@ -38,12 +40,15 @@ internal class Program
             {
                 food = foodCreator.CreateFood();
                 food.Draw();
+                Thread.Sleep(snakeSpeed -= 5);
+
             }
             else
             {
                 snake.Move();
+                Thread.Sleep(snakeSpeed);
             }
-            Thread.Sleep(150);
+            
 
             if(Console.KeyAvailable)
             {
