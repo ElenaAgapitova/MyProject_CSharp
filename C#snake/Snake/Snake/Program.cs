@@ -21,19 +21,22 @@ internal class Program
         FoodCreator foodCreator = new FoodCreator(80, 25, '█');
         Point food = foodCreator.CreateFood();
         food.Draw();
-           
-                        
+
+        int score = 0;
+                                  
         while(true)
         {
             if(water.isHit(snake) || snake.IsHitTail())
             {
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(40, 13);
-                Console.WriteLine("==================");
+                Console.WriteLine("====================");
                 Console.SetCursorPosition(40, 15);
-                Console.WriteLine("G A M E   O V E R");
+                Console.WriteLine(" G A M E   O V E R");
                 Console.SetCursorPosition(40, 17);
-                Console.WriteLine("==================");
+                Console.WriteLine($"   Game score: {score}");
+                Console.SetCursorPosition(40, 19);
+                Console.WriteLine("====================");
                 break;
             }
             if(snake.Eat(food))
@@ -41,6 +44,7 @@ internal class Program
                 food = foodCreator.CreateFood();
                 food.Draw();
                 Thread.Sleep(snakeSpeed -= 5);
+                score += 10;
 
             }
             else
