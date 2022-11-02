@@ -12,13 +12,13 @@ internal class Program
         Water water = new Water(100, 30);
         water.Draw();
 
-        Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta);
+        Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta); //
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
         snake.Print();
 
         int snakeSpeed = 150; // начальная скорость, замедление уменьшается на 5 едениц после еды
 
-        FoodCreator foodCreator = new FoodCreator(80, 25, '■');
+        FoodCreator foodCreator = new FoodCreator(80, 25, '■', ConsoleColor.DarkGreen);
         Point food = foodCreator.CreateFood();
         food.Draw();
 

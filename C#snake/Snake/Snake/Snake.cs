@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,20 @@ namespace Snake
             Point head = GetNextPoint();
             if (head.IsHit(food))
             {
+                pList.Remove(food);
+                food.Clear();
+                pList.Add(head);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /*internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
                 food.color = ConsoleColor.DarkMagenta;
                 food.sym = head.sym;
                 pList.Add(food);
@@ -78,10 +93,6 @@ namespace Snake
             }
             else
                 return false;
-        }
-
-
-
-
+        }*/
     }
 }
