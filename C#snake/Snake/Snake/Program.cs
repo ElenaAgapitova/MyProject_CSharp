@@ -15,7 +15,7 @@ internal class Program
 
         Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta);
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
-        snake.Print();
+        snake.Draw();
 
         int snakeSpeed = 150; // начальная скорость, замедление уменьшается на 5 едениц после еды
 

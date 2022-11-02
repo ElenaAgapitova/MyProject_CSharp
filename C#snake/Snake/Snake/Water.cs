@@ -37,7 +37,7 @@ namespace Snake
         {
             foreach(var water in waterList)
             {
-                water.Print();
+                water.Draw();
             }
         }
     }
