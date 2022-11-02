@@ -13,10 +13,10 @@ namespace Snake
         public Water(int mapWidth, int mapHeight)
         {
             waterList = new List<Figure>();
-            HorizontalLine lineUp = new HorizontalLine(0, mapWidth - 1, 0, '█');
-            VerticalLine lineLeft = new VerticalLine(0, mapHeight - 1, 0, '█');
-            HorizontalLine lineDown = new HorizontalLine(0, mapWidth - 1, mapHeight - 1, '█');
-            VerticalLine lineRight = new VerticalLine(0, mapHeight - 1, mapWidth - 1, '█');
+            HorizontalLine lineUp = new HorizontalLine(0, mapWidth - 1, 0, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineLeft = new VerticalLine(0, mapHeight - 1, 0, '█', ConsoleColor.DarkCyan);
+            HorizontalLine lineDown = new HorizontalLine(0, mapWidth - 1, mapHeight - 1, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineRight = new VerticalLine(0, mapHeight - 1, mapWidth - 1, '█', ConsoleColor.DarkCyan);
 
             waterList.Add(lineUp);
             waterList.Add(lineLeft);

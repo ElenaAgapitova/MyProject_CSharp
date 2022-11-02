@@ -20,7 +20,9 @@ namespace Snake
                 Point p = new Point (tail);
                 p.Move(i, direction);
                 pList.Add(p);
+               
             }
+            
         }
 
         internal void Move()
