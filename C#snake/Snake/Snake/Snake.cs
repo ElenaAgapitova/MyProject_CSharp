@@ -76,7 +76,6 @@ namespace Snake
                 food.color = head.color;
                 food.Draw();
                 pList.Add(food);
-               
                 return true;
             }
             else

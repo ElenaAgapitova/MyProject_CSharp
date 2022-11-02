@@ -1,4 +1,5 @@
 ﻿using Snake;
+using System.Security.Cryptography.X509Certificates;
 
 internal class Program
 {
@@ -28,15 +29,8 @@ internal class Program
         {
             if(water.isHit(snake) || snake.IsHitTail())
             {
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.SetCursorPosition(40, 11);
-                Console.WriteLine("====================");
-                Console.SetCursorPosition(40, 13);
-                Console.WriteLine(" G A M E   O V E R");
-                Console.SetCursorPosition(40, 15);
-                Console.WriteLine($"   Game score: {score}");
-                Console.SetCursorPosition(40, 17);
-                Console.WriteLine("====================");
+                Console.Clear();
+                WriteGameOver(score);
                 break;
             }
             if (snake.Eat(food))
@@ -60,8 +54,20 @@ internal class Program
                 snake.HandleKey(key.Key);
             }
         }  
-        
-        
+
+        static void WriteGameOver(int score)
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.SetCursorPosition(40, 11);
+            Console.WriteLine("====================");
+            Console.SetCursorPosition(40, 13);
+            Console.WriteLine(" G A M E   O V E R");
+            Console.SetCursorPosition(40, 15);
+            Console.WriteLine($"   Game score: {score}");
+            Console.SetCursorPosition(40, 17);
+            Console.WriteLine("====================");
+        }
+                
         Console.ReadLine(); 
 
      }
