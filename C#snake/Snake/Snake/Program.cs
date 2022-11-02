@@ -12,7 +12,7 @@ internal class Program
         Water water = new Water(100, 30);
         water.Draw();
 
-        Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta); //
+        Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta);
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
         snake.Print();
 

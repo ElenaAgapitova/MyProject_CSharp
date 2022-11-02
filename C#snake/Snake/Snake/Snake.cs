@@ -72,27 +72,16 @@ namespace Snake
             Point head = GetNextPoint();
             if (head.IsHit(food))
             {
-                pList.Remove(food);
-                food.Clear();
-                pList.Add(head);
+                food.sym = head.sym;
+                food.color = head.color;
+                food.Draw();
+                pList.Add(food);
+               
                 return true;
             }
             else
                 return false;
         }
 
-        /*internal bool Eat(Point food)
-        {
-            Point head = GetNextPoint();
-            if (head.IsHit(food))
-            {
-                food.color = ConsoleColor.DarkMagenta;
-                food.sym = head.sym;
-                pList.Add(food);
-                return true;
-            }
-            else
-                return false;
-        }*/
     }
 }
