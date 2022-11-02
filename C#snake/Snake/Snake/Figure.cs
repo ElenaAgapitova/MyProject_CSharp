@@ -9,7 +9,7 @@ namespace Snake
 {
     internal class Figure // базовый класс для наследников горизонтальные и вертикальные линии, здесь общий код для обоих классов
     {
-        protected List<Point> pList; // пишем protected
+        protected List<Point> pList;
         public void Draw()
         {
            
