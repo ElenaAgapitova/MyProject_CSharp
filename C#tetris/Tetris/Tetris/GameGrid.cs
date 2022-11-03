@@ -71,7 +71,7 @@ namespace Tetris
             for(int c = 0; c < Columns; c++)
             {
                 grid[r + numRows, c] = grid[r, c];
-                grid[r, c] = 0; // возможно grid[r+numRows, c] = 0
+                grid[r, c] = 0;
             }
         }
         public int ClearFullRows() // метод очистки полных строк
