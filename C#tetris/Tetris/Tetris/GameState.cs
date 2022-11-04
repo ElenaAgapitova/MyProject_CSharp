@@ -48,10 +48,10 @@ namespace Tetris
         {
             foreach(Position p in CurrentBlock.TilePositions())
             {
-                if(!GameGrid.IsEmpty(p.Row, p.Column))
+                if (!GameGrid.IsEmpty(p.Row, p.Column))
                     return false;
-                return true;
             }
+            return true;
         }
          
         // Метод для поворота текущего блока по часовой стрелке, но только если это возможно, делаем из того места, где это возможно
