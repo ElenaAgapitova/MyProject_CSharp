@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    internal class GameGrid
+    public class GameGrid
     {
         // Игровая сетка будет 10*20 (10 строки, 20 столбцы). Сделаем на 2 строки больше, там будет зарождаться блок
         private readonly int[,] grid; // сетка игры представляет собой двумерный массив из строк и столбцов
