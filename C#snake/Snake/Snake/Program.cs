@@ -13,13 +13,13 @@ internal class Program
         Water water = new Water(100, 30);
         water.Draw();
 
-        Point p = new Point(4, 5, '▒', ConsoleColor.DarkMagenta);
+        Point p = new Point(4, 5, '▒', ConsoleColor.DarkGreen);
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
         snake.Draw();
 
         int snakeSpeed = 150; // начальная скорость, замедление уменьшается на 5 едениц после еды
 
-        FoodCreator foodCreator = new FoodCreator(80, 25, '■', ConsoleColor.DarkGreen);
+        FoodCreator foodCreator = new FoodCreator(80, 25, '■', ConsoleColor.Red);
         Point food = foodCreator.CreateFood();
         food.Draw();
 
@@ -57,7 +57,7 @@ internal class Program
 
         static void WriteGameOver(int score)
         {
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.SetCursorPosition(40, 11);
             Console.WriteLine("====================");
             Console.SetCursorPosition(40, 13);
