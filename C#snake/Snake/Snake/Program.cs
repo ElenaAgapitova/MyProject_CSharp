@@ -12,6 +12,8 @@ internal class Program
 
         Water water = new Water(100, 30);
         water.Draw();
+       
+        
 
         Point p = new Point(4, 5, '█', ConsoleColor.DarkGreen); 
         CreateSnake snake = new CreateSnake(p, 5, Direction.RIGHT);
@@ -29,12 +31,14 @@ internal class Program
         {
             if(water.isHit(snake) || snake.IsHitTail())
             {
+                Console.Beep(200, 600);
                 Console.Clear();
                 WriteGameOver(score);
                 break;
             }
             if (snake.Eat(food))
             {
+                Console.Beep(1200,200);
                 food = foodCreator.CreateFood();
                 food.Draw();
                 snakeSpeed -= 5;
