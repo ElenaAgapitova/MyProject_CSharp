@@ -15,13 +15,17 @@ namespace Snake
             waterList = new List<Figure>();
             HorizontalLine lineUp = new HorizontalLine(0, mapWidth - 1, 0, '█', ConsoleColor.DarkCyan);
             VerticalLine lineLeft = new VerticalLine(0, mapHeight - 1, 0, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineLeft1 = new VerticalLine(0, mapHeight - 1, 1, '█', ConsoleColor.DarkCyan);
             HorizontalLine lineDown = new HorizontalLine(0, mapWidth - 1, mapHeight - 1, '█', ConsoleColor.DarkCyan);
             VerticalLine lineRight = new VerticalLine(0, mapHeight - 1, mapWidth - 1, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineRight1 = new VerticalLine(0, mapHeight - 1, mapWidth - 2, '█', ConsoleColor.DarkCyan);
 
             waterList.Add(lineUp);
             waterList.Add(lineLeft);
+            waterList.Add(lineLeft1);
             waterList.Add(lineDown);
             waterList.Add(lineRight);
+            waterList.Add(lineRight1);
         }
 
         internal bool isHit(Figure figure)
