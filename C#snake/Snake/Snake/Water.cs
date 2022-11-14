@@ -13,12 +13,12 @@ namespace Snake
         public Water(int mapWidth, int mapHeight)
         {
             waterList = new List<Figure>();
-            HorizontalLine lineUp = new HorizontalLine(0, mapWidth - 1, 0, '█', ConsoleColor.DarkCyan);
-            VerticalLine lineLeft = new VerticalLine(0, mapHeight - 1, 0, '█', ConsoleColor.DarkCyan);
-            VerticalLine lineLeft1 = new VerticalLine(0, mapHeight - 1, 1, '█', ConsoleColor.DarkCyan);
-            HorizontalLine lineDown = new HorizontalLine(0, mapWidth - 1, mapHeight - 1, '█', ConsoleColor.DarkCyan);
-            VerticalLine lineRight = new VerticalLine(0, mapHeight - 1, mapWidth - 1, '█', ConsoleColor.DarkCyan);
-            VerticalLine lineRight1 = new VerticalLine(0, mapHeight - 1, mapWidth - 2, '█', ConsoleColor.DarkCyan);
+            HorizontalLine lineUp = new HorizontalLine(1, mapWidth - 2, 1, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineLeft = new VerticalLine(1, mapHeight - 2, 1, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineLeft1 = new VerticalLine(1, mapHeight - 2, 2, '█', ConsoleColor.DarkCyan);
+            HorizontalLine lineDown = new HorizontalLine(1, mapWidth - 2, mapHeight - 2, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineRight = new VerticalLine(1, mapHeight - 2, mapWidth - 2, '█', ConsoleColor.DarkCyan);
+            VerticalLine lineRight1 = new VerticalLine(1, mapHeight - 2, mapWidth - 3, '█', ConsoleColor.DarkCyan);
 
             waterList.Add(lineUp);
             waterList.Add(lineLeft);
