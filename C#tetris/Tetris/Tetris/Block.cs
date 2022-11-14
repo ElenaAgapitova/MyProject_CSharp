@@ -27,7 +27,7 @@ namespace Tetris
 
         public IEnumerable<Position> TilePositions() // перебирает позиции плитки в текущем состоянии поворота и добавляет смещение строки и столбца
         {
-            foreach (Position p in TilePositions())
+            foreach (Position p in Tiles[rotationState])
             {
                 yield return new Position(p.Row + offset.Row, p.Column + offset.Column);
             }

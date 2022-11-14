@@ -22,6 +22,17 @@ namespace Tetris
                 currentBlock = value;
                 currentBlock.Reset(); // когда обновляем блок вызывается метод сброса, чтобы установить правильную 
                 // позицию и ротацию блока
+
+                for(int i = 0; i < 2; i++)
+                {
+                    currentBlock.Move(1, 0);
+
+                    if (!BlockFits())
+                    {
+                        currentBlock.Move(-1, 0);
+                    }
+
+                }
             }
         }
 
@@ -30,6 +41,11 @@ namespace Tetris
         public GameGrid GameGrid { get; }
         public BlockQueue BlockQueue { get; }
         public bool GameOver { get; private set; }
+        public int Score { get; private set; }
+        public Block HeldBlock { get; private set; }
+        public bool CanHold { get; private set; }
+
+
 
         // В конструкторе инициализируем игровую сетку с 22 строками и 10 столбцами, также инициализируем очередь блоков 
         // и используем для получения случайного блока для текущего свойства блока
@@ -39,6 +55,7 @@ namespace Tetris
             GameGrid = new GameGrid(22, 10);
             BlockQueue = new BlockQueue();
             CurrentBlock = BlockQueue.GetAndUpdate();
+            CanHold = true;
         }
 
         // Важный метод, который проверяет находится ли текущий блок в допустимой позиции или нет (перебирает позиции  
@@ -52,6 +69,30 @@ namespace Tetris
                     return false;
             }
             return true;
+        }
+
+        // Метод удержания блока
+
+        public void HoldBlock() // если не можем удержать, то мы просто возвращаем
+        {
+            if (!CanHold)
+            {
+                return;
+            }
+
+            if(HeldBlock == null)
+            {
+                HeldBlock = CurrentBlock;
+                CurrentBlock = BlockQueue.GetAndUpdate();
+            }
+            else
+            {
+                Block tmp = CurrentBlock;
+                CurrentBlock = HeldBlock;
+                HeldBlock = tmp;
+            }
+
+            CanHold = false;
         }
          
         // Метод для поворота текущего блока по часовой стрелке, но только если это возможно, делаем из того места, где это возможно
@@ -111,12 +152,16 @@ namespace Tetris
                 GameGrid[p.Row, p.Column] = CurrentBlock.id;
             }
               
-            GameGrid.ClearFullRows();
+            Score += GameGrid.ClearFullRows();
 
             if (IsGameOver())
                 GameOver = true;
             else
+            {
                 CurrentBlock = BlockQueue.GetAndUpdate();
+                CanHold = true;
+            }
+                
         }
 
         // Метод перемещения блока вниз, работает также, как и блоки с вращением, но также вызываем метод PlaceBlock
@@ -130,6 +175,33 @@ namespace Tetris
                 CurrentBlock.Move(-1, 0);
                 PlaceBlock();
             }
+        }
+
+        private int TileDropDistanse(Position p)
+        {
+            int drop = 0;
+
+            while(GameGrid.IsEmpty(p.Row + drop +1, p.Column))
+            {
+                drop++;
+            }
+            return drop;
+        }
+
+        public int BlockDropDistance()
+        {
+            int drop = GameGrid.Rows;
+            foreach(Position p in CurrentBlock.TilePositions())
+            {
+                drop = System.Math.Min(drop, TileDropDistanse(p));
+            }
+            return drop;
+        }
+
+        public void DropBlock()
+        {
+            CurrentBlock.Move(BlockDropDistance(), 0);
+            PlaceBlock();
         }
     }
 }
