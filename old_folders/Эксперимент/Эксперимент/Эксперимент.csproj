@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DDC819C-BEBD-4BB4-B5C6-7361C28ED305}</ProjectGuid>
+    <ProjectGuid>{C2658E99-AFF6-4241-820E-399FAF8872D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TurtleGame</RootNamespace>
-    <AssemblyName>TurtleGame</AssemblyName>
+    <RootNamespace>Эксперимент</RootNamespace>
+    <AssemblyName>Эксперимент</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SmallBasicLibrary">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft\Small Basic\SmallBasicLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft\Small Basic\SmallBasicLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

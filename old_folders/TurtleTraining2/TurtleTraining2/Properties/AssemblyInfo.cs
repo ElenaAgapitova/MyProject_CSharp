@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("TurtleGame")]
+[assembly: AssemblyTitle("TurtleTraining2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TurtleGame")]
+[assembly: AssemblyProduct("TurtleTraining2")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("1ddc819c-bebd-4bb4-b5c6-7361c28ed305")]
+[assembly: Guid("a8e07561-4e3c-48ee-9e98-2d4aec863a8b")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
