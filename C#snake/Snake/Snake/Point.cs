@@ -60,7 +60,7 @@ namespace Snake
             Console.ForegroundColor = color;
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
-            Console.SetCursorPosition(3, 3);
+            Console.SetCursorPosition(0, 0);
 
         }
         
